@@ -31,8 +31,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @maroon;
-    border-top: 2px solid @maroon;
+    color: @flamingo;
+    border-top: 2px solid @flamingo;
 }
 
 #mode {
