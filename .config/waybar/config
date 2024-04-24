@@ -1,74 +1,90 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar at the bottom of your screen
-    "height": 24, // Waybar height
-    // "width": 1366, // Waybar width
-    // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "custom/spotify"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock"],
-    "hyprland/workspaces": {	
-    	"format": "{name}",
-    	"on-scroll-up": "hyprctl dispatch workspace r-1",
-    	"on-scroll-down": "hyprctl dispatch workspace r+1",
-    	"all-outputs": true,
-	"on-click": "activate",
-    },
-    "hyprland/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "clock": {
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "{usage}% "
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "battery": {
-        "bat": "macsmc-battery",
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠"
-    },
-    "pulseaudio": {
-        //"scroll-step": 1,
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "custom/spotify": {
-        "format": " {}",
-        "max-length": 40,
-        "interval": 30, // Remove this if your script is endless and write in loop
-        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
-        "exec-if": "pgrep spotify"
-    }
+	"layer": "top", // Waybar at top layer
+		"position": "top", // Waybar at the bottom of your screen
+		"height": 24, // Waybar height
+			      // "width": 1366, // Waybar width
+			      // Choose the order of the modules
+		"modules-left": ["hyprland/workspaces", "custom/spotify"],
+		"modules-center": ["hyprland/window"],
+		"modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "tray", "custom/notifications", "clock"],
+		"hyprland/workspaces": {	
+			"format": "{name}",
+			"on-scroll-up": "hyprctl dispatch workspace r-1",
+			"on-scroll-down": "hyprctl dispatch workspace r+1",
+			"all-outputs": true,
+			"on-click": "activate",
+		},
+		"hyprland/mode": {
+			"format": "<span style=\"italic\">{}</span>"
+		},
+		"tray": {
+			// "icon-size": 21,
+			"spacing": 10
+		},
+		"clock": {
+			"format-alt": "{:%Y-%m-%d}"
+		},
+		"cpu": {
+			"format": "{usage}% "
+		},
+		"memory": {
+			"format": "{}% "
+		},
+		"battery": {
+			"bat": "macsmc-battery",
+			"states": {
+				// "good": 95,
+				"warning": 30,
+				"critical": 15
+			},
+			"format": "{capacity}% {icon}",
+			// "format-good": "", // An empty format will hide the module
+			// "format-full": "",
+			"format-icons": ["", "", "", "", ""]
+		},
+		"network": {
+			// "interface": "wlp2s0", // (Optional) To force the use of this interface
+			"format-wifi": "{essid} ",
+			"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+			"format-disconnected": "Disconnected ⚠"
+		},
+		"pulseaudio": {
+			//"scroll-step": 1,
+			"format": "{volume}% {icon}",
+			"format-bluetooth": "{volume}% {icon}",
+			"format-muted": "",
+			"format-icons": {
+				"headphones": "",
+				"handsfree": "",
+				"headset": "",
+				"phone": "",
+				"portable": "",
+				"car": "",
+				"default": ["", ""]
+			},
+			"on-click": "pavucontrol"
+		},
+		"custom/spotify": {
+			"format": " {}",
+			"max-length": 40,
+			"interval": 30, // Remove this if your script is endless and write in loop
+			"exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+			"exec-if": "pgrep spotify"
+		},
+		"custom/notifications": {
+			"tooltip": false,
+			"format": "{icon}",
+			"format-icons": {
+				"notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+				"none": " ",
+				"dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+				"dnd-none": " "
+			},
+			"return-type": "json",
+			"exec-if": "which swaync-client",
+			"exec": "swaync-client -swb",
+			"on-click": "sleep 0.1 && swaync-client -t -sw",
+			"on-click-right": "sleep 0.1 && swaync-client -d -sw",
+			"escape": true
+		}
 }
