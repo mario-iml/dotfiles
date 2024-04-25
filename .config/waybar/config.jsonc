@@ -1,7 +1,7 @@
 {
 	"layer": "top",
 	// "height": 24,
-	"margin": "10px 10px 0px 10px",
+	"margin": "10px 20px 0px 20px",
 	"modules-left": ["custom/launcher", "cpu", "memory", "disk"],
 	"modules-center": ["hyprland/workspaces"],
 	"modules-right": ["pulseaudio", "network", "battery", "tray", "custom/notifications", "clock"],
