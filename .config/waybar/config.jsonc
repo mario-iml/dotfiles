@@ -1,0 +1,74 @@
+{
+	"layer": "top",
+	// "height": 24,
+	"margin": "10px 10px 0px 10px",
+	"modules-left": ["custom/launcher", "cpu", "memory", "disk"],
+	"modules-center": ["hyprland/workspaces"],
+	"modules-right": ["pulseaudio", "network", "battery", "tray", "custom/notifications", "clock"],
+	"battery": {
+		"format": "{icon} {capacity}%",
+		"format-icons": ["", "", "", "", ""],
+		"format-charging": "{capacity}% 󰂄"
+	},
+	"clock": {
+		"format-alt": "{:%a, %d. %b  %H:%M}"
+	},
+	"cpu": {
+		"format": " {usage}%",
+	},
+	"memory": {
+		"format": " {percentage}% "
+	},
+	"disk": {
+		"format": " {used}/{total}"
+	},	
+	"tray": {
+		// "icon-size": 21,
+		"spacing": 5
+	},
+
+	"network": {
+		// "interface": "wlp2s0", // (Optional) To force the use of this interface
+		"format-wifi": " ",
+		"format-ethernet": "󰈀 ",
+		"format-disconnected": " "
+	},
+	"pulseaudio": {
+		//"scroll-step": 1,
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon}",
+		"format-muted": "",
+		"format-icons": {
+			"headphones": "",
+			"handsfree": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		"on-click": "pavucontrol"
+	},
+
+	"custom/launcher": {
+		"format": "",
+		"tooltip": false,
+		"on-click": "~/bin/launcher.sh",
+	},
+	"custom/notifications": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+			"none": " ",
+			"dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+			"dnd-none": " "
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "sleep 0.1 && swaync-client -t -sw",
+		"on-click-right": "sleep 0.1 && swaync-client -d -sw",
+		"escape": true
+	}
+}
