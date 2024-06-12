@@ -1,0 +1,51 @@
+(
+  defwindow workspaceBar
+  :monitor 1
+  :windowtype "dock"
+  :geometry (
+    geometry
+    :x "0%"
+    :y "0%"
+    :height "10px"
+    :anchor "top center"
+  )
+  :reserve (
+    struts
+    :side "left"
+    :distance "10px"
+  )
+  (workspaceBar)
+)
+
+(
+  defwidget workspaceBar []
+  (
+    centerbox
+    :orientation "h"
+    (label)
+    (workspaces)
+    (label)
+  )
+)
+
+(
+  defwidget workspaces []
+  (
+    box
+    :class "workspaces"
+    :orientation "h"
+    :space-evenly true
+    :halign "start"
+    :spacing 10
+    (button :onclick "hyprctl dispatch workspace 0" 1)
+    (button :onclick "hyprctl dispatch workspace 1" 2)
+    (button :onclick "hyprctl dispatch workspace 2" 3)
+    (button :onclick "hyprctl dispatch workspace 3" 4)
+    (button :onclick "hyprctl dispatch workspace 4" 5)
+    (button :onclick "hyprctl dispatch workspace 5" 6)
+    (button :onclick "hyprctl dispatch workspace 6" 7)
+    (button :onclick "hyprctl dispatch workspace 7" 8)
+    (button :onclick "hyprctl dispatch workspace 8" 9)
+    (button :onclick "hyprctl dispatch workspace 9" 10)
+  )
+)
