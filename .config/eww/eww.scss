@@ -1,9 +1,18 @@
-.workspaceBar {
+.workspaceBar0, .workspaceBar1, .workspaceBar2 {
     background-color: transparent;
+    font-size: 12px;
 }
 
-.workspaces button {
-    border-radius: 100%;
-    background-color: rgba(255,233,184,255);
-    color: rgba(90,32,10,255);
+.workspace-button {
+    padding: 0 4px 0 5px;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,.1);
+    color: #FFFFFF;
+    margin-bottom: 4px;
+}
+
+.workspace-active {
+    padding: 0 15px 0 16px;
+    background-color: #FFFFFF;
+    color: #000000;
 }

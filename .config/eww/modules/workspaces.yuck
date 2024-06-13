@@ -1,0 +1,67 @@
+(
+  defwindow workspaceBar0
+  :monitor 0
+  :windowtype "dock"
+  :geometry (
+    geometry
+    :x "0%"
+    :y "0%"
+    :anchor "bottom center"
+  )
+  (
+    centerbox
+    :orientation "h"
+    (label)
+    (box(workspaceWidget :monitor 0))
+    (label)
+  )
+)
+(
+  defwindow workspaceBar1
+  :monitor 1
+  :windowtype "dock"
+  :geometry (
+    geometry
+    :x "0%"
+    :y "0%"
+    :anchor "bottom center"
+  )
+  (
+    centerbox
+    :orientation "h"
+    (label)
+    (box(workspaceWidget :monitor 1))
+    (label)
+  )
+)
+(
+  defwindow workspaceBar2
+  :monitor 2
+  :windowtype "dock"
+  :geometry (
+    geometry
+    :x "0%"
+    :y "0%"
+    :anchor "bottom center"
+  )
+  (
+    centerbox
+    :orientation "h"
+    (label)
+    (box(workspaceWidget :monitor 2))
+    (label)
+  )
+)
+
+
+(deflisten workspaces "hyprland-workspaces _")
+
+(defwidget workspaceWidget [monitor]
+  (eventbox :onscroll "hyprctl dispatch workspace `echo {} | sed 's/up/+/\' | sed 's/down/-/'`1"
+    (box :class "workspaces" :spacing 5 :space-evenly false
+      (for i in {workspaces[monitor].workspaces}
+        (button
+          :onclick "hyprctl dispatch workspace ${i.id}"
+          :class "${i.class}"
+          "${i.name}")))))
+
