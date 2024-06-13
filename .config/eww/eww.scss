@@ -1,18 +1,57 @@
+@import "scss/colors.scss"
+
+// WORKSPACES
 .workspaceBar0, .workspaceBar1, .workspaceBar2 {
     background-color: transparent;
-    font-size: 12px;
+    font-size: 1rem;
+    padding: .7rem;
 }
 
 .workspace-button {
-    padding: 0 4px 0 5px;
-    border-radius: 4px;
-    background-color: rgba(255,255,255,.1);
-    color: #FFFFFF;
-    margin-bottom: 4px;
+    padding: 0 .4rem 0 .4rem;
+    border-radius: .4rem;
+    background-color: $bgColor;
+    color: $textDark;
 }
 
 .workspace-active {
     padding: 0 15px 0 16px;
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: $accentColor;
+    color: $textLight;
+}
+
+
+// SIDEBAR
+.sideBar0, .sideBar1, .sideBar2 {
+    background-color: transparent;
+    padding: .3rem;
+}
+
+.sideBar {
+    background-color: $bgSidebar;
+    border-radius: .4rem;
+}
+
+.profile-picture {
+    background-image: url('/home/mario/Pictures/profilePicture/profilePicture');
+    background-size: 2.2rem;
+    min-height: 2.2rem;
+    min-width: 2.2rem;
+    border-radius: .4rem;
+}
+
+.clockBox {
+    border-radius: .4rem;
+    font-size: 1rem;
+    background-color: $bgColor;
+    color: $textDark;
+    padding: .3rem 0 .3rem 0;
+}
+
+.tray {
+    border-radius: .4rem;
+    font-size: 1rem;
+    background-color: $bgColor;
+    color: $textLight;
+    padding: .3rem 0 .3rem 0;
 }

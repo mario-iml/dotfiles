@@ -1,0 +1,52 @@
+(
+  defwindow sideBar0
+  :monitor 0
+  :windowtype "dock"
+  :geometry (
+    geometry
+    :x "0%"
+    :y "0%"
+    :anchor "left center"
+    :height "100%"
+  )
+  (box(sideBarWidget))
+)
+(
+  defwindow sideBar1
+  :monitor 1
+  :windowtype "dock"
+  :geometry (
+    geometry
+    :x "0%"
+    :y "0%"
+    :anchor "left center"
+    :height "100%"
+  )
+  (box(sideBarWidget))
+)
+(
+  defwindow sideBar2
+  :monitor 2
+  :windowtype "dock"
+  :geometry (
+    geometry
+    :x "0%"
+    :y "0%"
+    :anchor "left center"
+    :height "100%"
+  )
+  (box(sideBarWidget))
+)
+
+(defwidget sideBarWidget []
+  (centerbox :class "sideBar" :orientation "v" :width "30" :space-evenly true
+    (label)
+    (label)
+    (box :orientation "v" :space-evenly false :valign "end" :spacing 10
+      (systray :class "tray" :orientation "v" :spacing 5 :icon-size 14)
+      (box :orientation "v" :spacing 0 :class "clockBox"
+        (label :class "clockHours" :text {formattime(EWW_TIME, "%H")})
+        (label :class "clockMinutes" :text {formattime(EWW_TIME, "%M")}))
+      (box :class "profile-picture")
+    )))
+

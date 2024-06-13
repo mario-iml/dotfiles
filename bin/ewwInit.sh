@@ -7,6 +7,7 @@ monitors=$(hyprctl monitors -j)
 index=0
 echo "$monitors" | jq -c '.[]' | while read monitor; do
     eww open "workspaceBar${index}"
+    eww open "sideBar${index}"
     index=$((index + 1))
 done
 
