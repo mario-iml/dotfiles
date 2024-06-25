@@ -1,5 +1,5 @@
 (
-  defwindow workspaceBar0
+  defwindow bottomBar0
   :monitor 0
   :windowtype "dock"
   :geometry (
@@ -8,34 +8,24 @@
     :y "0%"
     :anchor "bottom center"
   )
-  (
-    centerbox
-    :orientation "h"
-    (label)
-    (box(workspaceWidget :monitor 0))
-    (label)
-  )
+  (bottomBarWidget :monitor 0)
 )
 (
-  defwindow workspaceBar1
+  defwindow bottomBar1
   :monitor 1
   :windowtype "dock"
   :geometry (
     geometry
     :x "0%"
     :y "0%"
+    :height "40px"
+    :widht "1000px"
     :anchor "bottom center"
   )
-  (
-    centerbox
-    :orientation "h"
-    (label)
-    (box(workspaceWidget :monitor 1))
-    (label)
-  )
+  (bottomBarWidget :monitor 1 )
 )
 (
-  defwindow workspaceBar2
+  defwindow bottomBar2
   :monitor 2
   :windowtype "dock"
   :geometry (
@@ -44,15 +34,14 @@
     :y "0%"
     :anchor "bottom center"
   )
-  (
-    centerbox
-    :orientation "h"
-    (label)
-    (box(workspaceWidget :monitor 2))
-    (label)
-  )
+  (bottomBarWidget :monitor 2)
 )
 
+(defwidget bottomBarWidget [monitor]
+  (centerbox :orientation "h" :hexpand true
+    (label)
+    (box(workspaceWidget :monitor monitor))
+    (label)))
 
 (deflisten workspaces "hyprland-workspaces _")
 
