@@ -1,1 +1,2 @@
 (include "modules/bottomBar.yuck")
+(include "modules/sidebar.yuck")
