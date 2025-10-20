@@ -1,0 +1,15 @@
+# Transparency settings
+background-opacity = 0.9
+
+# Blur effect (macOS only)
+background-blur-radius = 20
+
+# Optional: Adjust these for better readability with transparency
+#window-padding-x = 10
+#window-padding-y = 10
+
+# Optional: Theme settings that work well with transparency
+# You might want to use a theme with good contrast
+# theme = dark:catppuccin-mocha
+#
+shell-integration-features = ssh-terminfo

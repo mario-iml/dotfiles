@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# Define the root directories to search
+root_dirs=("$HOME/Developer" "$HOME/.config")
+
+if [[ $# -eq 1 ]]; then
+  selected=$1
+else
+  # 1. Search the root directories for non-hidden, non-underscore-prefixed folders at depth 1.
+  # 2. Search subdirectories of underscore-prefixed folders at depth 2 (projects inside _uni, _work, etc.).
+  find_command=""
+  for dir in "${root_dirs[@]}"; do
+    # Part A: Find non-underscore-prefixed directories at depth 1 (e.g., ~/Developer/projectA)
+    find_command+="find $dir -mindepth 1 -maxdepth 1 -type d ! -name '.*' ! -name '_*' ; "
+
+    # Part B: Find directories at depth 2 that are inside an underscore-prefixed directory (e.g., ~/Developer/_uni/projectB)
+    find_command+="find $dir/_*/* -mindepth 1 -maxdepth 1 -type d ! -name '.*' ; "
+  done
+
+  # Remove the trailing semicolon and execute the commands, piping the results to fzf
+  # The '|| true' is used to prevent the script from exiting if one of the find commands fails (e.g., if a directory is empty)
+  # 'sort -u' ensures unique paths are listed before fzf
+  selected=$(eval "$find_command" 2>/dev/null | sort -u | fzf)
+fi
+
+if [[ -z $selected ]]; then
+  exit 0
+fi
+
+# ... rest of the script remains the same ...
+
+selected_name=$(basename "$selected" | tr . _)
+tmux_running=$(pgrep tmux)
+
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+  tmux new-session -s "$selected_name" -c "$selected"
+  exit 0
+fi
+
+if ! tmux has-session -t="$selected_name" 2>/dev/null; then
+  tmux new-session -ds "$selected_name" -c "$selected"
+fi
+
+if [[ -z $TMUX ]]; then
+  tmux attach -t "$selected_name"
+else
+  tmux switch-client -t "$selected_name"
+fi
