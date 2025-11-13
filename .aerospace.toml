@@ -33,7 +33,7 @@ alt-enter = '''
 exec-and-forget open -na Ghostty
 '''
 alt-b = '''
-exec-and-forget open -na Zen
+exec-and-forget open -na Comet
 '''
 alt-z = '''
 exec-and-forget open -na 'Zed'

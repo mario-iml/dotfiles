@@ -43,6 +43,9 @@ return {
   { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.completion.avante-nvim" },
   -- { import = "astrocommunity.completion.copilot-lua" },
+  --
+  -- { import = "astrocommunity.git.diffview-nvim" },
+  { import = "astrocommunity.git.blame-nvim" },
 
   { import = "astrocommunity.markdown-and-latex.vimtex" },
 
