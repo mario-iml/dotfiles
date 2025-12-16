@@ -12,9 +12,9 @@ bind \cf "tmux-sessionizer"
 #alias docker="podman"
 
 # git config aliases
-alias gc-uni = "git config user.name 'mario.immel' && git config user.email 'inf3850@hs-worms.de'"
-alias gc-work = "git config user.name 'mario.immel' && git config user.email 'mario.immel@thinking-labs.ai'"
-alias gc-github = "git config user.name 'mario-iml' && git config user.email 'mario@immel-eich.de'"
+alias gc-uni "git config user.name 'mario.immel' && git config user.email 'inf3850@hs-worms.de'"
+alias gc-work "git config user.name 'mario.immel' && git config user.email 'mario.immel@thinking-labs.ai'"
+alias gc-gh "git config user.name 'mario-iml' && git config user.email 'mario@immel-eich.de'"
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
