@@ -33,3 +33,6 @@ fish_add_path /Users/mario/.opencode/bin
 set -gx PATH $PATH /Users/mario/.lmstudio/bin
 # End of LM Studio CLI section
 
+
+# Added by Antigravity
+fish_add_path /Users/mario/.antigravity/antigravity/bin
