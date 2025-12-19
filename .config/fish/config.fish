@@ -7,6 +7,7 @@ set --export PATH $BUN_INSTALL/bin $PATH
 # scripts
 set PATH "$PATH":"$HOME/.local/scripts/"
 set PATH "$PATH":"$HOME/.cargo/bin/"
+set PATH "$PATH":"$(go env GOPATH)/bin"
 bind \cf "tmux-sessionizer"
 
 #alias docker="podman"
