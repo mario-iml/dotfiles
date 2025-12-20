@@ -16,6 +16,10 @@ bind \cf "tmux-sessionizer"
 alias gc-uni "git config user.name 'mario.immel' && git config user.email 'inf3850@hs-worms.de'"
 alias gc-work "git config user.name 'mario.immel' && git config user.email 'mario.immel@thinking-labs.ai'"
 alias gc-gh "git config user.name 'mario-iml' && git config user.email 'mario@immel-eich.de'"
+# jj config aliases
+alias jjc-uni "jj config set user.name 'mario.immel' && jj config set user.email 'inf3850@hs-worms.de'"
+alias jjc-work "jj config set user.name 'mario.immel' && jj config set user.email 'mario.immel@thinking-labs.ai'"
+alias jjc-gh "jj config set user.name 'mario-iml' && jj config set user.email 'mario@immel-eich.de'"
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
