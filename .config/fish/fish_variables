@@ -1,5 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export OPENAI_BASE_URL:https\x3a//openrouter\x2eai/api/v1
+SETUVAR --export OPENAI_TOKEN:sk\x2dor\x2dv1\x2dde33574d3ce43d462c0ea4cfa8cb85603a0d5255ce5ee70d103d9a72b36a19d1
+SETUVAR --export OPENROUTER_API_KEY:sk\x2dor\x2dv1\x2dde33574d3ce43d462c0ea4cfa8cb85603a0d5255ce5ee70d103d9a72b36a19d1
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
