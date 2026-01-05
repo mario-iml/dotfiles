@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# custom
+sudo dnf install golang git jj neovim
+
+# luavim
+sudo dnf install make pip python npm node cargo ripgrep
+# lazygit
+sudo dnf copr enable atim/lazygit
+sudo dnf install lazygit
