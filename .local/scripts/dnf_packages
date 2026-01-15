@@ -19,3 +19,14 @@ if ! command -v lvim &> /dev/null
 then
   LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
 fi
+
+# hyprland
+sudo dnf copr enable solopasha/hyprland
+# hyprpanel
+sudo dnf install wireplumber upower libgtop2 bluez bluez-tools grimblast hyprpicker btop NetworkManager wl-clipboard swww brightnessctl gnome-bluetooth power-profiles-daemon gvfs nodejs gtksourceview3 libsoup3
+sudo dnf install hyprland hyprpanel hyprshot
+
+# launcher
+sudo dnf copr enable dulikiles/vicinae
+sudo dnf install vicinae
+

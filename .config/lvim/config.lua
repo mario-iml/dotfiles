@@ -49,3 +49,8 @@ require("lvim.lsp.manager").setup("ltex", {
   },
 })
 
+-- bugfix hyprland config treesitter indent errpor
+lvim.builtin.indentlines.options.use_treesitter = false
+
+lvim.builtin.cmp.mapping["<Tab>"] = nil
+lvim.builtin.cmp.mapping["<S-Tab>"] = nil
