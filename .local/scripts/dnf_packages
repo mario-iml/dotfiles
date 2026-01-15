@@ -24,7 +24,7 @@ fi
 sudo dnf copr enable solopasha/hyprland
 # hyprpanel
 sudo dnf install wireplumber upower libgtop2 bluez bluez-tools grimblast hyprpicker btop NetworkManager wl-clipboard swww brightnessctl gnome-bluetooth power-profiles-daemon gvfs nodejs gtksourceview3 libsoup3
-sudo dnf install hyprland hyprpanel hyprshot
+sudo dnf install hyprland hyprpanel hyprshot waypaper nemo
 
 # launcher
 sudo dnf copr enable dulikiles/vicinae
