@@ -25,9 +25,6 @@ alias jjc-gh "jj config set --user user.name 'mario-iml' && jj config set --user
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
-# secrets
-source ~/.secrets
-
 # uv
 fish_add_path "/Users/mario/.local/bin"
 
