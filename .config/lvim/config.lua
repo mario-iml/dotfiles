@@ -8,6 +8,12 @@ lvim.format_on_save.enabled = true
 
 lvim.plugins = {
   {
+    "stevearc/dressing.nvim",
+    config = function()
+      require("dressing").setup()
+    end,
+  },
+  {
     "ThePrimeagen/99",
     config = function()
       local _99 = require("99")
