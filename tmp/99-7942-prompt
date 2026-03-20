@@ -1,3 +1,19 @@
+<DIRECTIONS>
+translate to german
+</DIRECTIONS>
+<Context>
+You receive a selection in neovim that you need to replace with new code.
+The selection's contents may contain notes, incorporate the notes every time if there are some.
+consider the context of the selection and what you are suppose to be implementing
+<SELECTION_LOCATION>
+range(point(15,1),point(17,76))
+</SELECTION_LOCATION>
+<SELECTION_CONTENT>
+      -- For logging that is to a file if you wish to trace through requests
+      -- for reporting bugs, i would not rely on this, but instead the provided
+      -- logging mechanisms within 99.  This is for more debugging purposes
+</SELECTION_CONTENT>
+<FILE_CONTAINING_SELECTION>
 -- Read the docs: https://www.lunarvim.org/docs/configuration
 -- Example configs: https://github.com/LunarVim/starter.lvim
 -- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
@@ -19,11 +35,11 @@ lvim.plugins = {
       local basename = vim.fs.basename(cwd)
       _99.setup({
         -- provider = _99.ClaudeCodeProvider,  -- default: OpenCodeProvider
-        logger = {
-          level = _99.DEBUG,
-          path = "/tmp/" .. basename .. ".99.debug",
-          print_on_error = true,
-        },
+        -- logger = {
+        --   level = _99.DEBUG,
+        --   path = "/tmp/" .. basename .. ".99.debug",
+        --   print_on_error = true,
+        -- },
 
         --- Completions: #rules and @files in the prompt buffer
         completion = {
@@ -102,3 +118,19 @@ lvim.plugins = {
 --   p = { "<cmd>TypstPreview<CR>", "Preview" },
 --   s = { "<cmd>TypstPreviewStop<CR>", "Stop Preview" },
 -- }
+</FILE_CONTAINING_SELECTION>
+
+</Context>
+
+<MustObey>
+NEVER alter any file other than TEMP_FILE.
+never provide the requested changes as conversational output. Return only the code.
+ONLY provide requested changes by writing the change to TEMP_FILE
+
+never attempt to read TEMP_FILE.
+It is purely for output.
+Previous contents, which may not exist, can be written over without worry
+After writing TEMP_FILE once you should be done.  Be done and end the session.
+
+</MustObey>
+<TEMP_FILE>/Users/mario/dotfiles/tmp/99-7942</TEMP_FILE>

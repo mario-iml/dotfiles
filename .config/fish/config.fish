@@ -39,8 +39,6 @@ set -gx PATH $PATH /Users/mario/.lmstudio/bin
 # Added by Antigravity
 fish_add_path /Users/mario/.antigravity/antigravity/bin
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 # pnpm
 set -gx PNPM_HOME "/home/mario/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
