@@ -1,0 +1,112 @@
+/* =========================================================
+   userChrome.css - Arc/Zen Inspired Firefox Theme
+   Matches Tridactyl dark mode palette
+   ========================================================= */
+
+:root {
+  /* Colors matching your Tridactyl theme */
+  --arc-bg: #1c1c1e;
+  --arc-fg: #f5f5f5;
+  --arc-accent-color: #3b82f6;
+  --arc-hover: #2c2c2e;
+
+  /* UI Proportions */
+  --arc-radius: 8px;
+  --arc-border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* --- Main Toolbar & Background --- */
+#navigator-toolbox {
+  background-color: var(--arc-bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#nav-bar,
+#PersonalToolbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* --- The URL Bar (Megabar) --- */
+#urlbar-background {
+  background-color: var(--arc-hover) !important;
+  border-radius: var(--arc-radius) !important;
+  border: var(--arc-border) !important;
+}
+
+/* URL bar focus state */
+#urlbar[focused="true"]>#urlbar-background {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), inset 0 0 0 1px var(--arc-accent-color) !important;
+  border: none !important;
+}
+
+#urlbar-input {
+  color: var(--arc-fg) !important;
+}
+
+/* Remove the annoying URL bar expansion animation */
+#urlbar[breakout][breakout-extend] {
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+
+#urlbar[breakout][breakout-extend]>#urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding-block: 0 !important;
+  padding-inline: 0 !important;
+}
+
+/* --- Floating Pill Tabs --- */
+.tab-background {
+  border-radius: var(--arc-radius) !important;
+  margin-block: 4px !important;
+  box-shadow: none !important;
+  border: none !important;
+  transition: background-color 0.15s ease !important;
+}
+
+/* Active Tab */
+.tabbrowser-tab[selected="true"] .tab-background {
+  background-color: var(--arc-hover) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  border: var(--arc-border) !important;
+}
+
+/* Hover Tab */
+.tabbrowser-tab:not([selected="true"]):hover .tab-background {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Text color for tabs */
+.tabbrowser-tab {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  color: var(--arc-fg) !important;
+  font-weight: 500 !important;
+}
+
+/* Hide native tab separators and ugly lines */
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+  display: none !important;
+}
+
+#tabbrowser-tabs {
+  border-inline-start: none !important;
+}
+
+.titlebar-spacer {
+  display: none !important;
+}
+
+/* --- Context Menus --- */
+menupopup {
+  --menu-background-color: var(--arc-hover) !important;
+  --menu-color: var(--arc-fg) !important;
+  --menu-border-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--arc-radius) !important;
+}
