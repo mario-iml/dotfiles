@@ -4,6 +4,16 @@ starship init fish | source
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
+# ruby
+fish_add_path $HOME/.rubies/ruby-4.0.2/bin
+
+# Set ANDROID_HOME (Use your actual path here)
+set -gx ANDROID_HOME $HOME/Library/Android/sdk
+
+# Add Android tools to PATH
+fish_add_path $ANDROID_HOME/platform-tools
+fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
+
 # scripts
 set PATH "$PATH":"$HOME/.local/scripts/"
 set PATH "$PATH":"$HOME/.cargo/bin/"
@@ -45,3 +55,6 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# Added by Antigravity
+fish_add_path /Users/mario/.antigravity/antigravity/bin
